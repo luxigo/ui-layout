@@ -983,11 +983,11 @@ angular.module('ui.layout', [])
         if (!attrs['uiLayoutLoaded']) {
           Layout.toggle().then(
             function(){
-              $scope.$broadcast('ui.layout.loaded', null);
+              $scope.$broadcast('ui.layout.loaded', null, el);
             }
           );
         } else {
-          $scope.$broadcast('ui.layout.loaded',  attrs['uiLayoutLoaded']);
+          $scope.$broadcast('ui.layout.loaded',  attrs['uiLayoutLoaded'], el);
         }
       }
     };
